@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the navbar */
+.navbar {
+  padding-top: 30px;
+}
+
+.logo-container {
+  font-size: 2rem;
+  margin-right: 100px; /* Adjusting margin for logo */
+}
+
+.vertical-line-left {
+  margin-left: 0; /* Resetting margins */
+  margin-right: 100px; /* Adjusting margin for left vertical line */
+}
+
+.links-container {
+  gap: 30px; /* Space between links */
+}
+
+.vertical-line-right {
+  margin-left: 20rem; /* Adjusting margin for right vertical line */
+   /* Adjusting margin for right vertical line */
+}
+
+.menu-icon {
+  font-size: 1.75rem;
+}
+
+.sidebar-container {
+  width: 450px; /* Sidebar width */
+  padding-top: 30px; /* Sidebar padding */
+  padding-left: 30px; /* Sidebar padding */
+}
+
+/* Custom styles for hover effects */
+.navbar a:hover {
+  border-bottom-color: #FFD700; /* Gold color for bottom border on hover */
+}
+
+nav:hover {
+  cursor: pointer; /* Pointer when hovering over the navbar */
+}
+
+.hover\\:border-gold:hover {
+  border-color: #FFD700; /* Gold color for border */
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  color: black;
+}
