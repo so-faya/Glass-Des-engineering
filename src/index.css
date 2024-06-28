@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body{
+  border: 1px solid black;
+}
 /* Custom styles for the navbar */
 .navbar {
   padding-top: 30px;
@@ -53,6 +57,14 @@ nav:hover {
   font-weight: bold;
   font-size: 2rem;
   color: black;
+}
+/*Styles for th fixed navbar*/
+.fixed-navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
 }
 
 /* Custom styles for the hero section */
@@ -114,13 +126,14 @@ nav:hover {
   margin-left: 5%; /* Adjust space between content */
 }
 
-.hero-left-content >p,
-.hero-left-content >h1,
-.hero-right-content>p{
-  color: white;
+.hero-left-content > p,
+.hero-left-content > h1,
+.hero-right-content > p {
+  color: white; /* Restoring text color to white */
   font-weight: bold;
 }
-.hero-left-content >h1{
+
+.hero-left-content > h1 {
   font-size: 75px;
   letter-spacing: 2px;
   line-height: 72px;
@@ -168,5 +181,161 @@ nav:hover {
   }
 }
 
+/* Custom styles for the About Us section */
+.about-sub-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 80px; 
+}
 
+.about-image {
+  position: relative;
+  width: 45%;
+  margin-right: 5%;
+}
+.about-image .big-image{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-image .move-small-image {
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  animation: move-small 5s linear infinite;
+}
+@keyframes move-small {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-10%); /* Move 10% into the big image */
+  }
+  100% {
+    transform: translateX(15%); 
+  }
+}
+.about-info {
+  width: 45%;
+}
+.about-info>h1{
+  padding-bottom: 20px;
+}
+.gold-border {
+  border-left: 3px solid #ffd700; /* Gold border */
+  padding-left: 10px; /* Padding for the border */
+}
+
+.about-us-button {
+  background-color: #ebc801; /* Gold background */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-us-button:hover {
+  background-color: #ffc800; /* Darker gold on hover */
+}
+
+.text-gray {
+  color: #41413d;
+  padding: 30px 0px;
+}
+
+
+/* Custom styles for the Service section */
+.service-section {
+  padding: 100px 80px;
+  background-color: rgb(231, 215, 215);
+}
+.service-description{
+  text-align: center;
+}
+.service-description .gold-border {
+  border-left: 3px solid #ffd700; /* Gold border */
+  padding-left: 10px; /* Padding for the border */
+  display: inline-block;
+}
+
+.service-title {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.service-title-line-break::before{
+  content: ' '; /* Add a space charater before the break*/
+  display: block;
+}
+
+.service-option {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.service-container {
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  line-height: 35px;
+}
+.service-container>h2{
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+.service-container:hover {
+  transform: scale(1.05);
+}
+
+.service-image-container {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-container:hover .service-image {
+  transform: scale(1.1);
+}
+
+.service-arrow-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.service-arrow-circle i {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.service-arrow-circle:hover {
+  background-color: #ffc800; /* Darker gold on hover */
+  border: none;
+}
 
