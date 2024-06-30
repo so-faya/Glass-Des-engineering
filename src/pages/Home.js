@@ -3,6 +3,8 @@ import '../index.css';
 import NavBar from '../components/NavBar';
 import AboutSub from '../components/AboutSub';
 import ServiceSection from '../components/ServiceSection';
+import NewsSub from '../components/NewsSub';
+import TestimonialsSub from '../components/TestimonialSub';
 import churchImage from '../assets/images/church-7376515_1280.jpg';
 import whiteImage from '../assets/images/white-2563976_1280.jpg';
 
@@ -21,10 +23,15 @@ const Home = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight) {
+      const heroSectionHeight = document.querySelector ('.hero-container').offsetHeight;
+      console.log('Hero Section Height:', heroSectionHeight);
+      console.log('Window Scroll Y:', window.scrollY);
+      if (window.scrollY > heroSectionHeight) {
         setNavbarFixed(true);
+        console.log('Navbar Fixed:', true);
       } else {
         setNavbarFixed(false);
+        console.log('Navbar Fixed:', false);
       }
     };
 
@@ -59,6 +66,8 @@ const Home = () => {
 
       <AboutSub />
       <ServiceSection />
+      <NewsSub />
+      <TestimonialsSub />
     </div>
   );
 };
