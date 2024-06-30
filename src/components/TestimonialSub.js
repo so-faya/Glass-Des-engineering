@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../index.css';
-import profileImage1 from '../assets/images/profileimage1.jpg';  // Adjust paths as necessary
+import profileImage1 from '../assets/images/profileimage1.jpg'; 
 import profileImage2 from '../assets/images/profileimage2.jpg';
 import profileImage3 from '../assets/images/profileimage3.jpg';
 import profileImage4 from '../assets/images/profileimage4.jpg';
@@ -14,7 +14,7 @@ const TestimonialsSub = () => {
 
     const interval = setInterval(() => {
       testimonials.forEach((testimonial, index) => {
-        testimonial.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+        testimonial.style.transform = `translateX(${(index - currentIndex) * (100 + 8)}%)`;
       });
       currentIndex = (currentIndex + 1) % testimonials.length;
     }, 4000);
@@ -29,7 +29,7 @@ const TestimonialsSub = () => {
       <div className="testimonials-container flex">
         {profileImages.map((image, index) => (
           <div key={index} className="testimonial-card bg-white text-center p-8 relative mx-4 transition-transform duration-1000 ease-in-out">
-            <div className="profile-image-container w-24 h-24 rounded-full overflow-hidden mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2 border-4 border-white">
+            <div className="profile-image-container w-24 h-24 rounded-full overflow-hidden mx-auto absolute -top-12 left-1/2 transform -translate-x-1/2 border-4 border-white z-10">
               <img src={image} alt={`Profile ${index + 1}`} className="w-full h-full object-cover"/>
             </div>
             <div className="stars my-4 mt-12">
