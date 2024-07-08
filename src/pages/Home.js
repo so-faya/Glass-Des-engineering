@@ -5,6 +5,7 @@ import AboutSub from '../components/AboutSub';
 import ServiceSection from '../components/ServiceSection';
 import NewsSub from '../components/NewsSub';
 import TestimonialsSub from '../components/TestimonialSub';
+import Testisub from '../components/Testisub';
 import churchImage from '../assets/images/church-7376515_1280.jpg';
 import whiteImage from '../assets/images/white-2563976_1280.jpg';
 
@@ -68,6 +69,7 @@ const Home = () => {
       <ServiceSection />
       <NewsSub />
       <TestimonialsSub />
+      <Testisub />
     </div>
   );
 };
