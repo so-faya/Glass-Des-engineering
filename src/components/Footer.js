@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="relative mt-24 z-0">
             <div className="marquee whitespace-nowrap">
               <p className="inline-block animate-marquee text-4xl font-bold">
-                This is a moving sentence from right to left.
+                Schedule a Free Consultation for Windows and Doors Replacement
               </p>
             </div>
           </div>
