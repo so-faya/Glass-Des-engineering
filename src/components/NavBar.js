@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const NavBar = ({ fixed }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -9,23 +10,19 @@ const NavBar = ({ fixed }) => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const reloadPage = () => {
-    window.location.reload();
-  };
-
   return (
     <div className={`relative ${fixed ? 'fixed-navbar' : ''}`}>
       <nav className="navbar flex items-center bg-white text-black py-7 px-5">
-        <div className="logo-container cursor-pointer" onClick={reloadPage}>
-          <div className="logo">LOGO</div>
+        <div className="logo-container cursor-pointer">
+          <Link to="/" className="logo">LOGO</Link>
         </div>
         <div className="vertical-line-left border-l h-6 border-gray-300"></div>
         <div className="links-container flex space-x-8">
-          <a href="#home" className="hover:border-b-2 hover:border-gold">Home</a>
-          <a href="#about" className="hover:border-b-2 hover:border-gold">About</a>
-          <a href="#services" className="hover:border-b-2 hover:border-gold">Services</a>
-          <a href="#news" className="hover:border-b-2 hover:border-gold">News</a>
-          <a href="#contact" className="hover:border-b-2 hover:border-gold">Contact</a>
+          <Link to="/" className="hover:border-b-2 hover:border-gold">Home</Link>
+          <Link to="/about" className="hover:border-b-2 hover:border-gold">About</Link>
+          <Link to="/services" className="hover:border-b-2 hover:border-gold">Services</Link>
+          <Link to="/NewsPage" className="hover:border-b-2 hover:border-gold">News</Link>
+          <Link to="/Contact" className="hover:border-b-2 hover:border-gold">Contact</Link>
         </div>
         <div className="vertical-line-right border-l h-6 border-gray-300"></div>
         <button className="menu-icon ml-auto px-4 text-3xl" onClick={toggleSidebar}>☰</button>

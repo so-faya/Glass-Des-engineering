@@ -1,48 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
-function ContactForm() {
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+      .then((result) => {
+          console.log(result.text);
+          alert('Message sent successfully!');
+      }, (error) => {
+          console.log(error.text);
+          alert('Failed to send message.');
+      });
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
+  };
+
   return (
-    <div className="bg-[#FFAA80] p-8 rounded-lg shadow-lg max-w-md mx-auto mt-10">
-      <h2 className="text-[#FF5580] text-2xl mb-6 text-center">Contact Us</h2>
-      <form className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block text-[#FF5580]">Name</label>
+    <div className="contact-us bg-yellow-950 text-white p-10">
+      <h2 className="text-3xl mb-6">Contact Us</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label className="block mb-2">Name</label>
           <input
             type="text"
-            id="name"
             name="name"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF0080]"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-2"
+            required
           />
         </div>
-        <div>
-          <label htmlFor="email" className="block text-[#FF5580]">Email</label>
+        <div className="mb-4">
+          <label className="block mb-2">Email</label>
           <input
             type="email"
-            id="email"
             name="email"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF0080]"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-2"
+            required
           />
         </div>
-        <div>
-          <label htmlFor="message" className="block text-[#FF5580]">Message</label>
+        <div className="mb-4">
+          <label className="block mb-2">Message</label>
           <textarea
-            id="message"
             name="message"
-            rows="4"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF0080]"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-2"
+            rows="5"
+            required
           ></textarea>
         </div>
-        <div className="text-center">
-          <button
-            type="submit"
-            className="bg-[#FFFF80] text-[#FF5580] hover:text-[#FF0080] px-4 py-2 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-[#FF0080]"
-          >
-            Send
-          </button>
-        </div>
+        <button type="submit" className="bg-gold text-black py-2 px-4 rounded-full">
+          Send Message
+        </button>
       </form>
     </div>
   );
-}
+};
 
-export default ContactForm;
+export default ContactUs;
