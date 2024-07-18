@@ -18,42 +18,42 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-b border-white my-8"></div>
-      <div className="flex flex-row pb-8 border-b border-white">
-        <div className="flex-1 flex flex-col">
-          <h3 className="text-xl mb-2">Des-Engineering</h3>
+      <div className="border-b border-white fade-border my-20"></div>
+      <div className="flex justify-evenly pb-20 border-b border-white fade-border">
+        <div className="flex-1 flex flex-col p-4 m-2">
+          <h3 className="text-xl mb-10 font-bold">Des-Engineering</h3>
           <p>Lorem ipsum dolor sit amet, consectetur.</p>
-          <div className="flex space-x-4 mt-2">
+          <div className="flex space-x-4 mt-10">
             <a href="#" className="text-white"><FaFacebook /></a>
             <a href="#" className="text-white"><FaInstagram /></a>
             <a href="#" className="text-white"><FaWhatsapp /></a>
             <a href="#" className="text-white"><FaTwitter /></a>
           </div>
         </div>
-        <div className="flex-1 flex flex-col">
-          <h3 className="text-xl mb-2">Our Links</h3>
+        <div className="flex-1 flex flex-col p-4 m-2">
+          <h3 className="text-xl mb-2 font-bold">Our Links</h3>
           <a href="#" className="footer-link">Features</a>
           <a href="#" className="footer-link">Team Member</a>
           <a href="#" className="footer-link">Our Careers</a>
           <a href="#" className="footer-link">Login Here</a>
           <a href="#" className="footer-link">Register</a>
         </div>
-        <div className="flex-1 flex flex-col">
-          <h3 className="text-xl mb-2">Our Links</h3>
+        <div className="flex-1 flex flex-col p-4 m-2">
+          <h3 className="text-xl mb-2 font-bold">Find it Fast </h3>
+          <a href="#" className="footer-link">Home</a>
+          <a href="#" className="footer-link">About Us</a>
+          <a href="#" className="footer-link">Services</a>
           <a href="#" className="footer-link">Features</a>
-          <a href="#" className="footer-link">Team Member</a>
-          <a href="#" className="footer-link">Our Careers</a>
-          <a href="#" className="footer-link">Login Here</a>
-          <a href="#" className="footer-link">Register</a>
+          <a href="#" className="footer-link">Contact</a>
         </div>
-        <div className="flex-1 flex flex-col">
-          <h3 className="text-xl mb-2">Contact Us</h3>
-          <p>1234 Address St.</p>
+        <div className="flex-1 flex flex-col p-4 m-2">
+          <h3 className="text-xl mb-5 font-bold">Contact Us</h3>
+          <p className=" mb-5">1234 Address St.</p>
           <p>email@example.com</p>
-          <p>+123 456 7890</p>
+          <p className=" mt-5">+123 456 7890</p>
         </div>
       </div>
-      <p className="text-center mt-4">Made with ❤️ by So-faya. - Powered by God.</p>
+      <p className="text-center mt-10 pb-10">Made with ❤️ by So-faya. - Powered by God.</p>
     </footer>
   );
 };
