@@ -2,14 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 import '../index.css';
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton = ({ heroClassName }) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.scrollY > document.querySelector('.hero-container').offsetHeight) {
-      setVisible(true);
+    if (heroClassName) {
+      const heroElement = document.querySelector(`.${heroClassName}`);
+      if (heroElement && window.scrollY > heroElement.offsetHeight) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
     } else {
-      setVisible(false);
+      setVisible(window.scrollY > 100); // Adjust this value as needed
     }
   };
 
@@ -25,7 +30,7 @@ const ScrollToTopButton = () => {
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
-  }, []);
+  }, [heroClassName]);
 
   return (
     <div className={`scroll-to-top ${visible ? 'visible' : ''}`} onClick={scrollToTop}>

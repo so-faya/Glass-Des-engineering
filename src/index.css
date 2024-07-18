@@ -19,7 +19,7 @@ body{
 }
 
 .vertical-line-left {
-  margin-left: 0; /* Resetting margins */
+  margin-left: 0;
   margin-right: 100px; /* Adjusting margin for left vertical line */
 }
 
@@ -68,7 +68,7 @@ nav:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .fixed-navbar .navbar {
-  background-color: white; /* Or any color you prefer */
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* Custom styles for the hero section */

@@ -5,13 +5,12 @@ import AboutSub from '../components/AboutSub';
 import ServiceSection from '../components/ServiceSection';
 import NewsSub from '../components/NewsSub';
 import ScrollToTopButton from '../components/ScrollToTopButton';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 import churchImage from '../assets/images/church-7376515_1280.jpg';
 import whiteImage from '../assets/images/white-2563976_1280.jpg';
 
 const Home = () => {
   const [bgIndex, setBgIndex] = useState(0);
-  const [navbarFixed, setNavbarFixed] = useState(false);
   const images = [churchImage, whiteImage];
 
   useEffect(() => {
@@ -22,27 +21,9 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSectionHeight = document.querySelector ('.hero-container').offsetHeight;
-      console.log('Hero Section Height:', heroSectionHeight);
-      console.log('Window Scroll Y:', window.scrollY);
-      if (window.scrollY > heroSectionHeight) {
-        setNavbarFixed(true);
-        console.log('Navbar Fixed:', true);
-      } else {
-        setNavbarFixed(false);
-        console.log('Navbar Fixed:', false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="home-container">
-      <NavBar fixed={navbarFixed} />
+      <NavBar fixed={true} /> {/* Set fixed prop to true */}
       <div className="hero-container">
         <div className="hero-background-container">
           <div
@@ -68,7 +49,7 @@ const Home = () => {
       <AboutSub />
       <ServiceSection />
       <NewsSub />
-      < ScrollToTopButton />
+      <ScrollToTopButton heroClassName="hero-container" />
       <Footer />
     </div>
   );
