@@ -503,3 +503,6 @@ footer a {
   text-decoration: none;
   color: inherit;
 }
+.about-hero-container{
+  height: 60vh;
+}
