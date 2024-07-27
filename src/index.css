@@ -344,6 +344,81 @@ nav:hover {
   border: none;
 }
 
+/*Service feature*/
+.service-feature {
+  margin: 100px 80px;
+  background-color: white;
+}
+
+.border-l-4 {
+  border-left-width: 4px;
+}
+
+.border-gold {
+  border-color: gold;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.slide-item {
+  position: relative;
+  text-align: center;
+  padding: 0 20px; /* Add padding to create space between images */
+}
+
+.slide-item img {
+  width: 100%;
+  height: 400px; /* Set height to 400px */
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 0.5rem;
+}
+
+.icon-wrapper {
+  background-color: white;
+  padding: 0.5rem; /* Adjust padding for icon size */
+  border-radius: 50%;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s; /* Added transition for color change */
+}
+
+.icon-wrapper:hover {
+  background-color: gold;
+}
+
+.icon-cart, .icon-star {
+  font-size: 24px; 
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.icon-wrapper:hover .icon-star, .icon-wrapper:hover .icon-cart {
+  color: white;
+}
+
+.icon-tag {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%; /* Position tag to the right of the icon */
+  margin-right: 0.5rem;
+  transform: translateY(20%); /* Center tag vertically relative to icon */
+  background-color: black;
+  color: white;
+  font-size: 13px;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+
+.icon-wrapper:hover .icon-tag {
+  display: block;
+}
+
 
 /*News Section Style*/
 
