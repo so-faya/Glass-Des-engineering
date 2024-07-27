@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ServiceSection from '../components/ServiceSection';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 import backgroundImageAbout from '../assets/images/arch-home.jpg';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
@@ -22,19 +23,19 @@ const Services = () => {
     centerPadding: '50px', // Increase padding for more space between images
   };
 
-  const images = [
-    require('../assets/images/door-1.jpg'),
-    require('../assets/images/door-2.jpg'),
-    require('../assets/images/window-1.jpg'),
-    require('../assets/images/door-983783_1280.jpg'),
-    require('../assets/images/door-2926843_1280.jpg'),
-    require('../assets/images/door-3036579_1280.jpg'),
-    require('../assets/images/door-3299119_1280.jpg'),
-    require('../assets/images/door-2768502_1280.jpg'),
-    require('../assets/images/shibuyasky-4768679_1280.jpg'),
-    require('../assets/images/window-7305702_1280.jpg'),
-    require('../assets/images/cozy-2681090_1280.jpg'),
-    require('../assets/images/door-1106012_1280.jpg')
+  const products = [
+    { image: require('../assets/images/door-1.jpg'), title: 'Solid wooden door', price: '$100' },
+    { image: require('../assets/images/door-2.jpg'), title: 'Solid wooden door', price: '$200' },
+    { image: require('../assets/images/window-1.jpg'), title: 'Plain Window', price: '$150' },
+    { image: require('../assets/images/door-983783_1280.jpg'), title: 'Solid Wooden Door', price: '$120' },
+    { image: require('../assets/images/door-2926843_1280.jpg'), title: 'Solid Wooden Door', price: '$130' },
+    { image: require('../assets/images/door-3036579_1280.jpg'), title: 'Solid Wooden Door', price: '$140' },
+    { image: require('../assets/images/door-3299119_1280.jpg'), title: 'Solid Wooden Door', price: '$160' },
+    { image: require('../assets/images/door-2768502_1280.jpg'), title: 'Solid Wooden Door', price: '$170' },
+    { image: require('../assets/images/shibuyasky-4768679_1280.jpg'), title: 'Sky View', price: '$110' },
+    { image: require('../assets/images/window-7305702_1280.jpg'), title: 'Window', price: '$180' },
+    { image: require('../assets/images/cozy-2681090_1280.jpg'), title: 'Cozy Corner', price: '$190' },
+    { image: require('../assets/images/door-1106012_1280.jpg'), title: 'Door', price: '$200' }
   ];
 
   return (
@@ -50,18 +51,18 @@ const Services = () => {
       </div>
 
       {/* Service feature section */}
-      <div className="service-feature my-24 mx-20 bg-white">
+      <div className="service-feature my-55 mx-20 bg-white">
         <div className="border-l-4 border-gold pl-2 mx-auto text-center mb-6" style={{ width: 'fit-content' }}>
-          <p className="inline-block">Lorem ipsum dolor</p>
+          <p className="inline-block feature-title">FEATURED WINDOWS AND DOORS PRODUCT</p>
         </div>
-        <h2 className="text-center mb-6">Lorem ipsum</h2>
+        <h2 className="text-center mb-20 feature-para">WINDOWS AND DOORS PRODUCT</h2>
         <Slider {...settings}>
           {/* Each slide item */}
-          {images.map((image, index) => (
+          {products.map((product, index) => (
             <div key={index} className="slide-item relative text-center">
-              <img src={image} alt={`Slide ${index + 1}`} className="w-full h-400 mb-4" />
-              <h3 className="mt-2">Lorem</h3>
-              <span className="block mt-1">$12</span>
+              <img src={product.image} alt={`Slide ${index + 1}`} className="w-full h-400 mb-4" />
+              <h3 className="mt-2">{product.title}</h3>
+              <span className="block mt-1">{product.price}</span>
               <div className="icon-container absolute top-0 right-6 flex flex-col items-center space-y-2 mt-2 mr-2">
                 <div className="icon-wrapper relative">
                   <FaEye className="icon-eye text-black" />
@@ -79,9 +80,24 @@ const Services = () => {
             </div>
           ))}
         </Slider>
+        <div className='mproduct-button mt-20 '>
+          <a href='#' className='mproduct-lbutton bg-gold'>View More Product</a>
+        </div>
+      </div>
+      <div className="relative overflow-hidden pt-5 flex flex-col items-center pb-20">
+        <div className="relative">
+          <div className="relative mt-5 z-0">
+            <div className="marquee whitespace-nowrap">
+              <p className="inline-block animate-marquee text-4xl font-bold">
+                Schedule a Free Consultation for Windows and Doors Replacement
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       
       <ServiceSection />
+      <ScrollToTopButton />
       <Footer />
     </div>
   );
