@@ -25,7 +25,11 @@ const NavBar = ({ fixed }) => {
           <Link to="/Contact" className="hover:border-b-2 hover:border-gold">Contact</Link>
         </div>
         <div className="vertical-line-right border-l h-6 border-gray-300"></div>
-        <button className="menu-icon ml-auto px-4 text-3xl" onClick={toggleSidebar}>☰</button>
+        <div className="flex items-center ml-auto space-x-4">
+          <i className="fa fa-shopping-cart text-lg cursor-pointer px-4"></i>
+          <i className="fa fa-user text-lg cursor-pointer px-4"></i>
+          <button className="menu-icon px-4 text-3xl" onClick={toggleSidebar}>☰</button>
+        </div>
       </nav>
 
       <div

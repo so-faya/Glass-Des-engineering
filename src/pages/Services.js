@@ -7,7 +7,7 @@ import backgroundImageAbout from '../assets/images/arch-home.jpg';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { FaStar, FaShoppingCart, FaEye } from 'react-icons/fa'; // Importing Font Awesome icons
+import { FaStar, FaShoppingCart, FaEye, FaBus, FaLock, FaHeadphonesAlt, FaMoneyBillWave } from 'react-icons/fa'; // Importing Font Awesome icons
 
 const Services = () => {
   const settings = {
@@ -51,7 +51,42 @@ const Services = () => {
       </div>
 
       {/* Service feature section */}
-      <div className="service-feature my-55 mx-20 bg-white">
+      <div className="service-feature mb-55 mt-0 mx-10 bg-white">
+        <div className="insurance-info mb-40 flex ">
+          <div className='insuranceinfo1 flex px-7 my-7 basis-1/4 justify-center'>
+            <FaBus className='icon-bud text-5xl mr-4 font-thin text-gray-500'/>
+            <div className='insurance-div'>
+              <div className='insurance-header font-bold'>Free Shipping</div>
+              <div className='insurance-comment text-gray-500 text-sm'>Free Shipping Over $100</div>
+            </div>
+          </div>
+
+          <div className='insuranceinfo2 flex  px-7 my-7 basis-1/4 justify-center border-l'>
+            <FaLock className='icon-bud text-5xl mr-4 font-thin text-gray-500'/>
+            <div className='insurance-div'>
+              <div className='insurance-header font-bold'>Payment Secure</div>
+              <div className='insurance-comment text-gray-500 text-sm'>Got 100% Payment Safe</div>
+            </div>
+          </div>
+          
+          <div className='insuranceinfo3 flex basis-1/4 px-7 my-7 justify-center border-l'>
+            <FaHeadphonesAlt className='icon-bud text-5xl mr-4 font-thin text-gray-500'/>
+            <div className='insurance-div'>
+              <div className='insurance-header font-bold'>Support 24/7</div>
+              <div className='insurance-comment text-gray-500 text-sm'>Quality 24/7 Support</div>
+            </div>
+          </div>
+          
+          <div className='insuranceinfo4 flex basis-1/4 px-7 my-7 justify-center border-l'>
+            <FaMoneyBillWave className='icon-bud text-5xl mr-4 font-thin text-gray-500'/>
+            <div className='insurance-div'>
+              <div className='insurance-header font-bold'>100% Money Back</div>
+              <div className='insurance-comment text-gray-500 text-sm'>Customers Money Back</div>
+            </div>
+          </div>
+        </div>
+
+
         <div className="border-l-4 border-gold pl-2 mx-auto text-center mb-6" style={{ width: 'fit-content' }}>
           <p className="inline-block feature-title">FEATURED WINDOWS AND DOORS PRODUCT</p>
         </div>

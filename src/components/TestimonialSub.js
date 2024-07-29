@@ -21,7 +21,7 @@ const TestimonialsSub = () => {
     centerPadding: '0',
     autoplay: true,
     autoplaySpeed: 4000,
-    pauseOnHover: true
+    pauseOnHover: true,
   };
 
   return (
@@ -30,12 +30,12 @@ const TestimonialsSub = () => {
         <p className="gold-border mx-auto mb-8 px-4 inline-block">Lorem ipsum dolor sit amet.</p>
         <h2 className="text-4xl font-bold">Lorem ipsum dolor sit amet</h2>
       </div>
-      <div className="relative z-0 ">
-        <Slider {...settings} className="testimonials-container pt-14 ">
+      <div className="relative z-0">
+        <Slider {...settings} className="testimonials-container pt-12 ">
           {profileImages.map((image, index) => (
-            <div key={index} className="testimonial-card bg-white text-center m-16 p-6 relative mx-16 border-x-8 border-custom-e7d7d7" style={{ width: '300px' }}>
+            <div key={index} className="testimonial-card bg-card-color text-center mt-16 mb-8 p-6 relative border-x-8 border-custom-e7d7d7">
               <div className="profile-image-container w-24 h-24 rounded-full overflow-hidden mx-auto" style={{ position: 'absolute', top: '-60px', left: 'calc(50% - 60px)', zIndex: 5 }}>
-                <img src={image} alt={`Profile ${index + 1}`} className="w-full h-full object-cover"/>
+                <img src={image} alt={`Profile ${index + 1}`} className="w-full h-full object-cover" />
               </div>
               <div className="stars my-4 mt-20">
                 {[1, 2, 3, 4, 5].map(star => (
