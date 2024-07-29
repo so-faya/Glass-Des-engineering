@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import AboutSub from '../components/AboutSub';
 import ServiceSection from '../components/ServiceSection';
 import NewsSub from '../components/NewsSub';
+import TestimonialsSub from '../components/TestimonialSub';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Footer from '../components/Footer';
 import churchImage from '../assets/images/church-7376515_1280.jpg';
@@ -49,6 +50,7 @@ const Home = () => {
       <AboutSub />
       <ServiceSection />
       <NewsSub />
+      <TestimonialsSub />
       <ScrollToTopButton heroClassName="hero-container" />
       <Footer />
     </div>

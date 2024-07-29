@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import ScrollToTopButton from '../components/ScrollToTopButton'
 import NewsSub from '../components/NewsSub'
+import TestimonialSub from '../components/TestimonialSub'
 import backgroundImageNews from '../assets/images/building-8373618_1280.jpg'
 
 const NewsPage = () => {
@@ -19,6 +20,7 @@ const NewsPage = () => {
       </div>
 
       <NewsSub />
+      <TestimonialSub />
       <ScrollToTopButton />
       <Footer />
     </div>
