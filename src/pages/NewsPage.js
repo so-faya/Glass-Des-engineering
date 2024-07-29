@@ -21,7 +21,7 @@ const NewsPage = () => {
 
       <NewsSub />
       <TestimonialSub />
-      <ScrollToTopButton />
+      <ScrollToTopButton heroClassName="newspage-hero-container"/>
       <Footer />
     </div>
   )

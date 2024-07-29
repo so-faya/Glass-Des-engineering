@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ServiceSection from '../components/ServiceSection';
@@ -7,9 +7,11 @@ import backgroundImageAbout from '../assets/images/arch-home.jpg';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { FaStar, FaShoppingCart, FaEye, FaBus, FaLock, FaHeadphonesAlt, FaMoneyBillWave } from 'react-icons/fa'; // Importing Font Awesome icons
+import { FaStar, FaShoppingCart, FaEye, FaBus, FaLock, FaHeadphonesAlt, FaMoneyBillWave, FaSearch } from 'react-icons/fa'; // Import FaSearch icon
 
 const Services = () => {
+  const [viewMode, setViewMode] = useState('slider'); // State variable to manage view mode
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -20,7 +22,7 @@ const Services = () => {
     cssEase: "linear",
     arrows: false,
     centerMode: true,
-    centerPadding: '50px', // Increase padding for more space between images
+    centerPadding: '50px',
   };
 
   const products = [
@@ -37,6 +39,10 @@ const Services = () => {
     { image: require('../assets/images/cozy-2681090_1280.jpg'), title: 'Cozy Corner', price: '$190' },
     { image: require('../assets/images/door-1106012_1280.jpg'), title: 'Door', price: '$200' }
   ];
+
+  const toggleViewMode = () => {
+    setViewMode(viewMode === 'slider' ? 'grid' : 'slider');
+  };
 
   return (
     <div className='services-container'>
@@ -86,39 +92,82 @@ const Services = () => {
           </div>
         </div>
 
-
         <div className="border-l-4 border-gold pl-2 mx-auto text-center mb-6" style={{ width: 'fit-content' }}>
           <p className="inline-block feature-title">FEATURED WINDOWS AND DOORS PRODUCT</p>
         </div>
         <h2 className="text-center mb-20 feature-para">WINDOWS AND DOORS PRODUCT</h2>
-        <Slider {...settings}>
-          {/* Each slide item */}
-          {products.map((product, index) => (
-            <div key={index} className="slide-item relative text-center">
-              <img src={product.image} alt={`Slide ${index + 1}`} className="w-full h-400 mb-4" />
-              <h3 className="mt-2">{product.title}</h3>
-              <span className="block mt-1">{product.price}</span>
-              <div className="icon-container absolute top-0 right-6 flex flex-col items-center space-y-2 mt-2 mr-2">
-                <div className="icon-wrapper relative">
-                  <FaEye className="icon-eye text-black" />
-                  <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Quick</span>
-                </div>
-                <div className="icon-wrapper relative">
-                  <FaStar className="icon-star text-black" />
-                  <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Rating</span>
-                </div>
-                <div className="icon-wrapper relative">
-                  <FaShoppingCart className="icon-cart text-black" />
-                  <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Add to cart</span>
+
+          {/* Search bar */}
+        <div className="flex justify-center my-8">
+          <div className="relative w-1/2">
+            <input 
+              type="text" 
+              placeholder="Search for Product" 
+              className="w-full py-2 pl-4 pr-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
+            />
+            <FaSearch className="absolute top-2 right-2 text-gray-500" />
+          </div>
+          <button className="ml-4 px-4 py-2 bg-gold text-white rounded-md">Search</button>
+        </div>
+
+
+        {viewMode === 'slider' ? (
+          <Slider {...settings}>
+            {products.map((product, index) => (
+              <div key={index} className="slide-item relative text-center">
+                <img src={product.image} alt={`Slide ${index + 1}`} className="w-full h-400 mb-4" />
+                <h3 className="mt-2">{product.title}</h3>
+                <span className="block mt-1">{product.price}</span>
+                <div className="icon-container absolute top-0 right-6 flex flex-col items-center space-y-2 mt-2 mr-2">
+                  <div className="icon-wrapper relative">
+                    <FaEye className="icon-eye text-black" />
+                    <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Quick View</span>
+                  </div>
+                  <div className="icon-wrapper relative">
+                    <FaStar className="icon-star text-black" />
+                    <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Rating</span>
+                  </div>
+                  <div className="icon-wrapper relative">
+                    <FaShoppingCart className="icon-cart text-black" />
+                    <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Add to cart</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-        <div className='mproduct-button mt-20 '>
-          <a href='#' className='mproduct-lbutton bg-gold'>View More Product</a>
+            ))}
+          </Slider>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-20">
+            {products.map((product, index) => (
+              <div key={index} className="slide-item relative text-center pt-20">
+                <img src={product.image} alt={`Slide ${index + 1}`} className="w-full h-400 mb-4" />
+                <h3 className="mt-2">{product.title}</h3>
+                <span className="block mt-1">{product.price}</span>
+                <div className="icon-container absolute top-0 right-6 flex flex-col items-center space-y-2 mt-2 mr-2">
+                  <div className="icon-wrapper relative">
+                    <FaEye className="icon-eye text-black" />
+                    <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Quick</span>
+                  </div>
+                  <div className="icon-wrapper relative">
+                    <FaStar className="icon-star text-black" />
+                    <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Rating</span>
+                  </div>
+                  <div className="icon-wrapper relative">
+                    <FaShoppingCart className="icon-cart text-black" />
+                    <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Add to cart</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className='mproduct-button mt-20'>
+          <button onClick={toggleViewMode} className='mproduct-lbutton bg-gold'>
+            {viewMode === 'slider' ? 'View More Product' : 'View Less Product'}
+          </button>
         </div>
       </div>
+      
       <div className="relative overflow-hidden pt-5 flex flex-col items-center pb-20">
         <div className="relative">
           <div className="relative mt-5 z-0">
@@ -132,7 +181,7 @@ const Services = () => {
       </div>
       
       <ServiceSection />
-      <ScrollToTopButton />
+      <ScrollToTopButton heroClassName="about-hero-container"/>
       <Footer />
     </div>
   );

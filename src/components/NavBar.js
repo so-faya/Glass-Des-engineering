@@ -19,14 +19,14 @@ const NavBar = ({ fixed }) => {
         <div className="vertical-line-left border-l h-6 border-gray-300"></div>
         <div className="links-container flex space-x-8">
           <Link to="/" className="hover:border-b-2 hover:border-gold">Home</Link>
-          <Link to="/about" className="hover:border-b-2 hover:border-gold">About</Link>
           <Link to="/services" className="hover:border-b-2 hover:border-gold">Services</Link>
+          <Link to="/about" className="hover:border-b-2 hover:border-gold">About</Link>
           <Link to="/NewsPage" className="hover:border-b-2 hover:border-gold">News</Link>
           <Link to="/Contact" className="hover:border-b-2 hover:border-gold">Contact</Link>
         </div>
         <div className="vertical-line-right border-l h-6 border-gray-300"></div>
         <div className="flex items-center ml-auto space-x-4">
-          <i className="fa fa-shopping-cart text-lg cursor-pointer px-4"></i>
+          <Link to='/cart' className="fa fa-shopping-cart text-lg cursor-pointer px-4"></Link>
           <i className="fa fa-user text-lg cursor-pointer px-4"></i>
           <button className="menu-icon px-4 text-3xl" onClick={toggleSidebar}>☰</button>
         </div>
