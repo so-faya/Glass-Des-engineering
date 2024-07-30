@@ -138,7 +138,7 @@ const Services = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-20">
             {products.map((product, index) => (
-              <div key={index} className="slide-item relative text-center pt-20">
+              <div key={index} className="slide-item relative text-center mb-20">
                 <img src={product.image} alt={`Slide ${index + 1}`} className="w-full h-400 mb-4" />
                 <h3 className="mt-2">{product.title}</h3>
                 <span className="block mt-1">{product.price}</span>

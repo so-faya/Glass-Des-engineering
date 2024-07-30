@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import '../index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { useCart } from '../context/CartContext';
 
 const NavBar = ({ fixed }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { cart } = useCart();// Access the cart state
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -26,7 +28,10 @@ const NavBar = ({ fixed }) => {
         </div>
         <div className="vertical-line-right border-l h-6 border-gray-300"></div>
         <div className="flex items-center ml-auto space-x-4">
-          <Link to='/cart' className="fa fa-shopping-cart text-lg cursor-pointer px-4"></Link>
+          <Link to='/cart' className=" relative fa fa-shopping-cart text-lg cursor-pointer px-4"></Link>
+            {cart.length > 0 &&(
+              <span className='absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center'>{cart.length}</span>
+            )}
           <i className="fa fa-user text-lg cursor-pointer px-4"></i>
           <button className="menu-icon px-4 text-3xl" onClick={toggleSidebar}>☰</button>
         </div>
