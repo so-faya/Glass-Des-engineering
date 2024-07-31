@@ -7,10 +7,16 @@ import backgroundImageAbout from '../assets/images/arch-home.jpg';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { FaStar, FaShoppingCart, FaEye, FaBus, FaLock, FaHeadphonesAlt, FaMoneyBillWave, FaSearch } from 'react-icons/fa'; // Import FaSearch icon
+import { FaStar, FaShoppingCart, FaEye, FaBus, FaLock, FaHeadphonesAlt, FaMoneyBillWave, FaSearch } from 'react-icons/fa';
+import { useCart } from '../context/CartContext';
 
 const Services = () => {
   const [viewMode, setViewMode] = useState('slider'); // State variable to manage view mode
+  const { dispatch } = useCart(); // Destructure dispatch from useCart
+
+  const addToCart = (product) => {
+    dispatch({ type: 'ADD_TO_CART', product });
+  };
 
   const settings = {
     infinite: true,
@@ -58,7 +64,7 @@ const Services = () => {
 
       {/* Service feature section */}
       <div className="service-feature mb-55 mt-0 mx-10 bg-white">
-        <div className="insurance-info mb-40 flex ">
+        <div className="insurance-info mb-40 flex">
           <div className='insuranceinfo1 flex px-7 my-7 basis-1/4 justify-center'>
             <FaBus className='icon-bud text-5xl mr-4 font-thin text-gray-500'/>
             <div className='insurance-div'>
@@ -97,7 +103,7 @@ const Services = () => {
         </div>
         <h2 className="text-center mb-20 feature-para">WINDOWS AND DOORS PRODUCT</h2>
 
-          {/* Search bar */}
+        {/* Search bar */}
         <div className="flex justify-center my-8">
           <div className="relative w-1/2">
             <input 
@@ -109,7 +115,6 @@ const Services = () => {
           </div>
           <button className="ml-4 px-4 py-2 bg-gold text-white rounded-md">Search</button>
         </div>
-
 
         {viewMode === 'slider' ? (
           <Slider {...settings}>
@@ -128,7 +133,9 @@ const Services = () => {
                     <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Rating</span>
                   </div>
                   <div className="icon-wrapper relative">
-                    <FaShoppingCart className="icon-cart text-black" />
+                    <FaShoppingCart className="icon-cart text-black cursor-pointer" 
+                    onClick={() => addToCart(product)}
+                    />
                     <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Add to cart</span>
                   </div>
                 </div>
@@ -152,7 +159,9 @@ const Services = () => {
                     <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Rating</span>
                   </div>
                   <div className="icon-wrapper relative">
-                    <FaShoppingCart className="icon-cart text-black" />
+                    <FaShoppingCart className="icon-cart text-black cursor-pointer" 
+                    onClick={() => addToCart(product)}
+                    />
                     <span className="icon-tag hidden absolute top-0 right-full ml-2 bg-black text-white px-2 py-1 rounded">Add to cart</span>
                   </div>
                 </div>
