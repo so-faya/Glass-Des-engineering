@@ -14,6 +14,7 @@ const Services = () => {
   const [viewMode, setViewMode] = useState('slider'); // State variable to manage view mode
   const { dispatch } = useCart(); // Destructure dispatch from useCart
 
+  //Function to handle adding products to the cart
   const addToCart = (product) => {
     dispatch({ type: 'ADD_TO_CART', product });
   };

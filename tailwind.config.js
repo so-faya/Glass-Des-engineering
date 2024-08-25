@@ -13,6 +13,9 @@ module.exports = {
       borderColor: {
         'custom-e7d7d7': '#e7d7d7', // Custom border color
       },
+      screens: {
+        'sm': {'max': '1000'}, //Custom screen size for small scream (1190and below)
+      }
     },
   },
   plugins: [],

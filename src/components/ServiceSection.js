@@ -11,14 +11,14 @@ const ServiceSection = () => {
       </div>
       <h1 className="service-title text-center">
         Trusted Wooden & Door 
-        <span className='service-title text-center'></span>
+        < span className='service-title text-center'></span>
         Useful Service.
       </h1>
       
       <div className="service-option flex justify-between mt-10">
         <div className="service-container">
           <div className="service-image-container">
-            <img src={serviceImage1} alt="Service 1" className="service-image" />
+            < img src={serviceImage1} alt="Service 1" className="service-image" />
           </div>
           <h2>1.Lorem ipsum</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula sapien sit amet dolor vestibulum, vitae facilisis ligula efficitur.</p>

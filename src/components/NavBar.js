@@ -13,18 +13,18 @@ const NavBar = ({ fixed }) => {
   };
 
   return (
-    <div className={`relative ${fixed ? 'fixed-navbar' : ''}`}>
-      <nav className="navbar flex items-center bg-white text-black py-7 px-5">
-        <div className="logo-container cursor-pointer">
+    < div className={`relative ${fixed ? 'fixed-navbar' : ''}`}>
+      <nav className="navbar flex items-center bg-white text-black px-5 py-7">
+        <div className="logo-container cursor-pointer border flex justify-center">
           <Link to="/" className="logo">LOGO</Link>
         </div>
         <div className="vertical-line-left border-l h-6 border-gray-300"></div>
         <div className="links-container flex space-x-8">
-          <Link to="/" className="hover:border-b-2 hover:border-gold">Home</Link>
-          <Link to="/services" className="hover:border-b-2 hover:border-gold">Services</Link>
-          <Link to="/about" className="hover:border-b-2 hover:border-gold">About</Link>
-          <Link to="/NewsPage" className="hover:border-b-2 hover:border-gold">News</Link>
-          <Link to="/Contact" className="hover:border-b-2 hover:border-gold">Contact</Link>
+          <Link to="/" className="pagelinks hover:border-b-2 hover:border-gold">Home</Link>
+          <Link to="/services" className="pagelinks hover:border-b-2 hover:border-gold">Services</Link>
+          <Link to="/about" className="pagelinks hover:border-b-2 hover:border-gold">About</Link>
+          <Link to="/NewsPage" className="pagelinks hover:border-b-2 hover:border-gold">News</Link>
+          <Link to="/Contact" className="pagelinks hover:border-b-2 hover:border-gold">Contact</Link>
         </div>
         <div className="vertical-line-right border-l h-6 border-gray-300"></div>
         <div className="flex items-center ml-auto space-x-4">
@@ -47,7 +47,17 @@ const NavBar = ({ fixed }) => {
         </button>
         <div className="p-4">
           <div className="text-2xl mb-4">Glass Making Company</div>
-          <div className="mb-4">We specialize in handcrafted glass products, providing top-notch services and beautiful glassware.</div>
+          <div className="mb-4 menudiff">We specialize in handcrafted glass products, providing top-notch services and beautiful glassware.</div>
+
+          {/* Links moved to sidebar - displayed in a column */}
+          <div className="linkcontainer2 flex flex-col space-y-4 my-10">
+            <Link to="/" className="pagelinks2 pb-2 border-b hover:text-gold">Home <span> &nrArr;</span></Link>
+            <Link to="/services" className="pagelinks2 pb-2 border-b hover:text-gold">Services <span> &nrArr;</span></Link>
+            <Link to="/about" className="pagelinks2 pb-2 border-b hover:text-gold">About <span> &nrArr;</span></Link>
+            <Link to="/NewsPage" className="pagelinks2 pb-2 border-b hover:text-gold">News <span> &nrArr;</span></Link>
+            <Link to="/Contact" className="pagelinks2 pb-2 border-b hover:text-gold">Contact <span> &nrArr;</span></Link>
+          </div>
+
           <div className="mb-4">
             <div className="flex items-center mb-2">
               <i className="fa fa-map-marker mr-2"></i>

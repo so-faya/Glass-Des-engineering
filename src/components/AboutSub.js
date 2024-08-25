@@ -6,7 +6,7 @@ const AboutSub = () => {
   return (
     <div className="about-sub-container">
       <div className="about-image">
-        <img src={aboutImage} alt="About gif" className="big-image"/>
+        < img src={aboutImage} alt="About gif" className="big-image"/>
         <img
           className="move-small-image"
           src={smallImage}
