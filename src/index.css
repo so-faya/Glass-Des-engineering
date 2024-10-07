@@ -597,7 +597,8 @@ footer a {
 }
 
 /* Media query for screens between 1190px and 320px */
-@media (max-width: 1190px) and (min-width: 576px) {
+/* for the navbar */
+@media (max-width: 1190px) and (min-width: 320px) {
   /* navbar*/  
   .logo-container {
     font-size: 5rem;
@@ -614,9 +615,7 @@ footer a {
   .vertical-line-right {
     margin-left: 1rem; /* Adjusting margin for right vertical line */
   }
-  
-  
-  
+
   .sidebar-container {
     width: 450px; /* Sidebar width */
     padding-top: 30px; /* Sidebar padding */
@@ -625,8 +624,7 @@ footer a {
   
 }
 
-
-/* Media query for screens between 576px and 320px */
+/* Media query for screens between 991px and 320px */
 @media (max-width: 991px) and (min-width: 320px) {
   
   .hero-content-container{
@@ -658,7 +656,7 @@ footer a {
       transform: translateY(-100%);
     }
   }
-  .about-sub-container,{
+  .about-sub-container{
     margin: 100px 50px; 
   }
   .service-section  {
@@ -706,7 +704,77 @@ footer a {
     border-radius: 50%;
     margin-bottom: 40px;
   }
+
+}
+
+/* for the navbar, width (575-320) */
+@media (max-width: 575px) and (min-width: 320px) {
+  /* navbar*/  
+  .logo-container {
+    font-size: 4rem;
+    margin-right: 40px; /* Adjusting margin for logo */
+  }    
+  .vertical-line-right {
+    display: none;
+  }
+  .sidebar-container {
+    width: 80%; /* Sidebar width */
+    padding-top: 50px; /* Sidebar padding */
+    padding-left: 50px; /* Sidebar padding */
+  }
+
+  /* Custom styles for the About Us section */
+  .about-sub-container{
+    margin: 100px 10px; 
+  }
+  .about-sub-container{
+    display: flex;
+  }
+ 
+  .about-image {
+    width: 95%;
+    height: 400px;    
+  }
+  .about-image .move-small-image {
+    width: 250px;
+    height: 150px;
+  }
+  .about-info {
+    width: 100%;
+  }
+  .about-info>h1{
+    padding-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  /* service section */
+  .service-section {
+    padding: 100px 10px;
+    background-color: rgb(231, 215, 215);
+  }
+
+  .service-title {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .service-option {
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .service-container {
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-bottom: 50px;
+  }
   
 
+
+
   
+
 }
