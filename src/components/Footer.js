@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Footer = () => {
   return (
-    <footer className="bg-yellow-950 text-white py-100 px-10">
+    <footer className="bg-yellow-950 text-white footer-container">
       <div className="relative overflow-hidden pt-20 flex flex-col items-center">
         <div className="relative">
           <a href="#" className="bg-gold text-black h-40 w-40 rounded-full flex items-center justify-center absolute top-[-3rem] left-1/2 transform -translate-x-1/2 z-10 text-center text-2xl">
@@ -20,8 +20,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-b border-white fade-border my-20"></div>
-      <div className="flex justify-evenly pb-20 border-b border-white fade-border">
-        <div className="flex-1 flex flex-col p-4 m-2">
+      <div className="flex justify-evenly pb-20 border-b border-white fade-border linkoos">
+        <div className="linkoos-container flex-1 flex flex-col p-4 m-2">
           <h3 className="text-xl mb-10 font-bold">Des-Engineering</h3>
           <p>Lorem ipsum dolor sit amet, consectetur.</p>
           <div className="flex space-x-4 mt-10">
@@ -31,7 +31,7 @@ const Footer = () => {
             <a href="#" className="text-white"><FaTwitter /></a>
           </div>
         </div>
-        <div className="flex-1 flex flex-col p-4 m-2">
+        <div className="linkoos-container flex-1 flex flex-col p-4 m-2">
           <h3 className="text-xl mb-2 font-bold">Our Links</h3>
           <a href="#" className="footer-link">Features</a>
           <a href="#" className="footer-link">Team Member</a>
@@ -39,7 +39,7 @@ const Footer = () => {
           <a href="#" className="footer-link">Login Here</a>
           <a href="#" className="footer-link">Register</a>
         </div>
-        <div className="flex-1 flex flex-col p-4 m-2">
+        <div className="linkoos-container flex-1 flex flex-col p-4 m-2">
           <h3 className="text-xl mb-2 font-bold">Find it Fast </h3>
           <Link to="/" className="footer-link">Home</Link>
           <Link to="/about" className="footer-link">About Us</Link>
@@ -47,7 +47,7 @@ const Footer = () => {
           <Link to="/NewsPage" className="footer-link">Features</Link>
           <Link to="/Contact" className="footer-link">Contact</Link>
         </div>
-        <div className="flex-1 flex flex-col p-4 m-2">
+        <div className="linkoos-container flex-1 flex flex-col p-4 m-2">
           <h3 className="text-xl mb-5 font-bold">Contact Us</h3>
           <p className=" mb-5">1234 Address St.</p>
           <p>email@example.com</p>

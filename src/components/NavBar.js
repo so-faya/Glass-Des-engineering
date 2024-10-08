@@ -27,7 +27,7 @@ const NavBar = ({ fixed }) => {
           <Link to="/Contact" className="pagelinks hover:border-b-2 hover:border-gold">Contact</Link>
         </div>
         <div className="vertical-line-right border-l h-6 border-gray-300"></div>
-        <div className="flex items-center ml-auto space-x-4">
+        <div className="flex items-center ml-auto nav-last-links">
           <Link to='/cart' className=" relative fa fa-shopping-cart text-lg cursor-pointer px-4"></Link>
             {cart.length > 0 &&(
               <span className='cart-count absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center'>{cart.length}</span>
