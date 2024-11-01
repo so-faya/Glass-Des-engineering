@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Glass-Des-engineering/static/css/main.6f6d96d3.css",
-    "main.js": "/Glass-Des-engineering/static/js/main.3031c706.js",
+    "main.js": "/Glass-Des-engineering/static/js/main.993e7aeb.js",
     "static/media/church-7376515_1280.jpg": "/Glass-Des-engineering/static/media/church-7376515_1280.f477c54388775b7da4a6.jpg",
     "static/media/wooden-door.jpg": "/Glass-Des-engineering/static/media/wooden-door.645ca144beeb6f5564c5.jpg",
     "static/media/door-983783_1280.jpg": "/Glass-Des-engineering/static/media/door-983783_1280.6960dcd655aacbf2b324.jpg",
@@ -40,10 +40,10 @@
     "static/media/slick.woff": "/Glass-Des-engineering/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Glass-Des-engineering/index.html",
     "main.6f6d96d3.css.map": "/Glass-Des-engineering/static/css/main.6f6d96d3.css.map",
-    "main.3031c706.js.map": "/Glass-Des-engineering/static/js/main.3031c706.js.map"
+    "main.993e7aeb.js.map": "/Glass-Des-engineering/static/js/main.993e7aeb.js.map"
   },
   "entrypoints": [
     "static/css/main.6f6d96d3.css",
-    "static/js/main.3031c706.js"
+    "static/js/main.993e7aeb.js"
   ]
 }
